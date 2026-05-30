@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 int main(){
@@ -27,7 +28,18 @@ int main(){
     }
     else if (op=='/')
     {
+        if (num2==0)
+        {
+            cout << " division by zero not possible ";
+        }
+        else
+        {
         cout << num1 / num2;
+        }
+    }
+    else if (op='%')
+    {
+        cout << fmod(num1, num2);
     }
     else 
     {
