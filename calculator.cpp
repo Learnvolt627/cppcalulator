@@ -13,38 +13,35 @@ int main(){
     cout << " enter your second number";
     cin >> num2;
 
-    if (op=='+')
+    switch(op)
     {
-        cout << num1 + num2;
-    }
-    else if (op== '-')
-    {
-        cout << num1 - num2;
-    }
+        case '+':
+            cout << num1 + num2;
+            break;
 
-    else if (op== '*')
-    {
-        cout << num1 * num2;
-    }
-    else if (op=='/')
-    {
-        if (num2==0)
-        {
-            cout << " division by zero not possible ";
-        }
-        else
-        {
-        cout << num1 / num2;
-        }
-    }
-    else if (op='%')
-    {
-        cout << fmod(num1, num2);
-    }
-    else 
-    {
-        cout << "please enter valid operator";
-    }
+        case '-':
+            cout << num1 - num2;
+            break;
 
+        case '*':
+            cout << num1 * num2;
+            break;
+        
+
+        case '/':
+            if(num2==0)
+            {
+                cout << "division by zero not possible";
+            }
+            else
+            {
+                cout << num1 / num2;
+            }
+            break;
+
+        case '%':
+            cout << fmod(num1, num2);
+            break;
+    }
     return 0;
 }
