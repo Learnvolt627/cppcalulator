@@ -2,10 +2,13 @@
 #include <cmath>
 using namespace std;
 
-int main(){
+int main()
+{
     float num1, num2;
     char op;
-
+    char choice;
+    do
+    {
     cout << "Enter your first number: ";
     cin >> num1;
     cout << "Enter the operation to perform: ";
@@ -13,48 +16,51 @@ int main(){
     cout << "Enter your second number: ";
     cin >> num2;
 
-    switch(op)
-    {
-        case '+':
-            cout << "result= "<< num1 + num2;
-            break;
+        switch(op)
+        {
+            case '+':
+                cout << "result= "<< num1 + num2;
+                break;
 
-        case '-':
-            cout << "result= "<< num1 - num2;
-            break;
+            case '-':
+                cout << "result= "<< num1 - num2;
+                break;
 
-        case '*':
-            cout << "result= "<<num1 * num2;
-            break;
-        
+            case '*':
+                cout << "result= "<<num1 * num2;
+                break;
+            
 
-        case '/':
-            if(num2==0)
-            {
-                cout << "division by zero not possible";
+            case '/':
+                if(num2==0)
+                {
+                    cout << "division by zero not possible";
+                }
+                else
+                {
+                    cout <<"result= "<< num1 / num2;
+                }
+                break;
+
+            case '%':
+                if (num2==0)
+                {
+                    cout << "division by zero is not possible";
+                }
+                else
+                {
+                    cout << fmod(num1, num2);
+
+                }
+            
+                break;
+
+            default:
+                cout << "Invalid operator";
+                break;
             }
-            else
-            {
-                cout <<"result= "<< num1 / num2;
-            }
-            break;
-
-        case '%':
-            if (num2==0)
-            {
-                cout << 'division by zero is not possible';
-            }
-            else
-            {
-                 cout << fmod(num1, num2);
-
-            }
-           
-            break;
-
-        default:
-            cout << "Invalid operator";
-            break;
-    }
+        cout << "\nDo you want to continue(y/n)";
+                cin >> choice;
+    } while (choice == 'y');
     return 0;
 }
