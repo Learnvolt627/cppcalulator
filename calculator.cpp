@@ -6,25 +6,25 @@ int main(){
     float num1, num2;
     char op;
 
-    cout << "enter your first number";
+    cout << "Enter your first number: ";
     cin >> num1;
-    cout << "enter the operation to perform";
+    cout << "Enter the operation to perform: ";
     cin >> op;
-    cout << " enter your second number";
+    cout << "Enter your second number: ";
     cin >> num2;
 
     switch(op)
     {
         case '+':
-            cout << num1 + num2;
+            cout << "result= "<< num1 + num2;
             break;
 
         case '-':
-            cout << num1 - num2;
+            cout << "result= "<< num1 - num2;
             break;
 
         case '*':
-            cout << num1 * num2;
+            cout << "result= "<<num1 * num2;
             break;
         
 
@@ -35,12 +35,25 @@ int main(){
             }
             else
             {
-                cout << num1 / num2;
+                cout <<"result= "<< num1 / num2;
             }
             break;
 
         case '%':
-            cout << fmod(num1, num2);
+            if (num2==0)
+            {
+                cout << 'division by zero is not possible';
+            }
+            else
+            {
+                 cout << fmod(num1, num2);
+
+            }
+           
+            break;
+
+        default:
+            cout << "Invalid operator";
             break;
     }
     return 0;
